@@ -44,16 +44,23 @@ function guessSecretWord(){
   }
 }
 
-
-
 //This is the event listener, gives the button the power to sync with the function.
 let el = document.getElementById("thebutton");
 el.addEventListener("click", function(){
     guessSecretWord();
 }, false);
 
+//Informtion Alert Box
+var close = document.getElementsByClassName("closeButton");
+var i;
 
-
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function(){
+    var div = this.parentElement;
+    div.style.opacity = "0";
+    setTimeout(function(){ div.style.display = "none"; }, 600);
+  }
+}
 //Below is previous code.
 
 
